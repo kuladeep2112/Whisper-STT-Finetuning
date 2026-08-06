@@ -110,6 +110,3 @@ parameters; rank 16 underfit.
 - **Human-corrected labels** — current labels are Whisper + LLM correction
   (near self-distillation); a small human-verified set is the highest-leverage
   data investment.
-
-See [`STT_domain_adaptation_wiki.md`](STT_domain_adaptation_wiki.md) for the full
-workflow, notebook-by-notebook detail, folder structure, and schema.
