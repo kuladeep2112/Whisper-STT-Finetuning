@@ -1,0 +1,48 @@
+# ==============================================================================
+#  STT_finetuning - requirements  (pinned from conda env: agentic_env, Tesla T4)
+# ------------------------------------------------------------------------------
+#  torch stack is CUDA 12.1. Install it from the matched index FIRST, then the
+#  rest of this file:
+#
+#    pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 \
+#        --index-url https://download.pytorch.org/whl/cu121
+#    pip install -r requirements.txt
+#
+#  NOTE: unsloth / unsloth_zoo / torchao are intentionally absent - the
+#  notebooks uninstall them (unsloth pad_token issue -> HF PEFT fallback).
+# ==============================================================================
+
+# --- core DL / training stack (CUDA 12.1) ---
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+transformers==4.56.2
+peft==0.19.1
+accelerate==1.14.0
+bitsandbytes==0.49.2            # adamw_8bit optimizer in trainer.py
+
+# --- datasets / features ---
+datasets==3.6.0
+librosa==0.11.0
+soundfile==0.14.0
+numpy==2.4.6
+
+# --- ASR + inference ---
+faster-whisper==1.2.1          # Phase 2 transcription + non-English detection
+
+# --- evaluation ---
+jiwer==4.0.0                   # WER / CER + word-level alignment
+evaluate==0.4.6
+
+# --- LLM cleaning (Phase 2) ---
+anthropic==0.118.0             # domain filter + ASR-error correction
+
+# --- data sourcing (Phase 1) ---
+gdown==6.1.0                   # pull source zip from Google Drive
+# google-api-python-client     # NOT installed in agentic_env - add if you use the
+# youtube-transcript-api       #   YouTube Data API cells in data_sourcing.ipynb
+
+# --- utilities / reporting ---
+matplotlib==3.11.1
+tabulate==0.10.0
+tqdm==4.69.0
