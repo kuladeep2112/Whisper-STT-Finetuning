@@ -25,14 +25,12 @@ produce labels that no longer match the waveform.
 
 ---
 
-## Dataset
-
 | Artifact | What | Location |
 |---|---|---|
-| Source audio | 86 sourced YouTube videos, ~12.8 h speech | Azure Blob `stt_audio/audio/` *(internal)* |
-| Cleaned transcripts | Whisper output + LLM domain filter/correction | `stt_audio/transcripts_clean/` |
-| Fine-tune dataset | ≤30 s chunks, 128-mel features + labels | `stt_audio/whisper_ds/` (train + validation) |
-| Test set | 6 manually-verified clips | `stt_audio/test_set/` |
+| Source audio | 86 sourced YouTube videos, ~12.8 h speech | "https://drive.google.com/file/d/1Rp43l85A8SGd7gNN3Xf07fz-pE5tJyZF/view?usp=sharing" |
+| Cleaned transcripts | Whisper output + LLM domain filter/correction | "https://drive.google.com/file/d/1BPZz40Lmul61m_aBBI8d13Wwm7ZfIUFm/view?usp=sharing"  |
+| Fine-tune dataset | ≤30 s chunks, 128-mel features + labels | `/home/azureuser/cloudfiles/code/Users/kuladeep.a/STT_finetuning/stt_audio/whisper_ds`|
+| Test set | 6 manually-verified clips | `/home/azureuser/cloudfiles/code/Users/kuladeep.a/STT_finetuning/test_set` |
 | Base model | Whisper large-v3-turbo | [openai/whisper-large-v3-turbo](https://huggingface.co/openai/whisper-large-v3-turbo) |
 
 > Source audio is scraped from public YouTube for internal research only; it is
